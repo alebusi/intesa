@@ -42,7 +42,9 @@ function changeWord() {
 document.addEventListener("keydown", function(event) {
     if (event.code === "Space") {
         // Cambia la parola ogni volta che la barra spaziatrice viene premuta
-        changeWord();
+        if (!isRunning) {
+            changeWord();
+        }
 
         // Avvia o ferma il countdown
         toggleCountdown();
