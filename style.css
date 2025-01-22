@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+#container {
+    text-align: center;
+}
+
+#word-container {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#countdown-container {
+    font-size: 30px;
+    font-weight: normal;
+}
+
+#word {
+    display: block;
+    margin: 0 auto;
+}
