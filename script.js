@@ -1,5 +1,5 @@
 // Array di parole da selezionare casualmente
-const words = ["Gatto", "Albero", "Sole", "Mare", "Auto", "Cielo", "Montagna", "Libro", "Cane", "Fiume"];
+const words = ["Penna", "Tokyo", "Nuvoloso", "Macelleria", "Stuzzicadenti", "Baglioni", "Innocente", "Tarocchi", "SMS", "SORELLA","SCENA","MATERASSO","Giovedì","SFERA","SPEGNERE","BECCHIME","SCIMMIA","NOTTE","BIGIOTTERIA","DIVANO","SLALOM","NUORA","OBELISCO","PAUSA","NUOTO","QUOTIDIANO","TONNELLATA",CASELLO","STRADA","CARLO","ELEZIONI"];
 
 let countdownInterval; // Interval per il countdown
 let isRunning = false; // Stato del countdown
