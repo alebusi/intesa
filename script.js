@@ -2,7 +2,7 @@
 const words = ["Penna", "Tokyo", "Nuvoloso", "Macelleria", "Stuzzicadenti", "Baglioni", 
                "Innocente", "Tarocchi", "SMS", "SORELLA","SCENA","MATERASSO","Giovedì",
                "SFERA","SPEGNERE","BECCHIME","SCIMMIA","NOTTE","BIGIOTTERIA","DIVANO",
-               "SLALOM","NUORA","OBELISCO","PAUSA","NUOTO","QUOTIDIANO","TONNELLATA",CASELLO",
+               "SLALOM","NUORA","OBELISCO","PAUSA","NUOTO","QUOTIDIANO","TONNELLATA","CASELLO",
                "STRADA","CARLO","ELEZIONI"];
 
 let countdownInterval; // Interval per il countdown
