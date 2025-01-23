@@ -8,6 +8,7 @@ const words = ["Penna", "Tokyo", "Nuvoloso", "Macelleria", "Stuzzicadenti", "Bag
 let countdownInterval; // Interval per il countdown
 let isRunning = false; // Stato del countdown
 let currentTime = 60; // Tempo iniziale del countdown
+let randomIndex = 0;  // si posiziona sulla prima parola
 const wordElement = document.getElementById("word");
 const countdownElement = document.getElementById("countdown");
 
@@ -34,8 +35,12 @@ function toggleCountdown() {
 
 // Funzione per cambiare la parola
 function changeWord() {
-    const randomIndex = Math.floor(Math.random() * words.length);
+    //const randomIndex = Math.floor(Math.random() * words.length);
     wordElement.textContent = words[randomIndex];
+    randomIndex = randomIndex+1;
+    if (randomIndex > words.length) {
+        randomIndex = 0;
+    }
 }
 
 // Aggiungi un evento alla barra spaziatrice
