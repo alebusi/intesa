@@ -64,9 +64,20 @@ function toggleCountdown() {
             if (currentTime > 0) {
                 currentTime--;
                 countdownElement.textContent = currentTime;
-    timerTime = 0;
-    timerElement.textContent = timerTime;
-    toggleCountdown();
+            } else {
+                clearInterval(countdownInterval);
+                isCountingDown = false;
+            }
+        }, 1000);
+        
+        // Avvia anche il timer per la parola
+        timerInterval = setInterval(function() {
+            timerTime++;
+            timerElement.textContent = timerTime;
+        }, 1000);
+
+        isCountingDown = true;
+    }
 }
 
 // Funzione per cambiare la parola
