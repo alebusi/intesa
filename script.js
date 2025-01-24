@@ -82,24 +82,24 @@ function toggleCountdown() {
 
 // Funzione per cambiare la parola
 function changeWord() {
-    wordElement.textContent = words[currentIndex];
-    currentIndex++;
-    if (currentIndex > words.length) {
-        currentIndex = 0;
+    if (!isCountingDown) { //Se non sta andando
+        wordElement.textContent = words[currentIndex];
+        currentIndex++;
+        if (currentIndex > words.length) {
+            currentIndex = 0;
+        } 
+        //currentTime = 60;
+        countdownElement.textContent = currentTime;
+        timerTime = 0;
+        timerElement.textContent = timerTime;
     }
-    currentTime = 60;
-    countdownElement.textContent = currentTime;
-    timerTime = 0;
-    timerElement.textContent = timerTime;
     toggleCountdown();
 }
 
 // Aggiungi un evento alla barra spaziatrice
 document.addEventListener("keydown", function(event) {
     if (event.code === "Space") {
-        if (!isCountingDown) {
-            changeWord();
-        }
+        changeWord();
     }
 });
 
