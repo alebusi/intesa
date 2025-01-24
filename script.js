@@ -97,7 +97,9 @@ function changeWord() {
 // Aggiungi un evento alla barra spaziatrice
 document.addEventListener("keydown", function(event) {
     if (event.code === "Space") {
-        changeWord();
+        if (!isCountingDown) {
+            changeWord();
+        }
     }
 });
 
