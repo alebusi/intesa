@@ -38,59 +38,52 @@ const words = ["NOE","CAFFE","POMATA","RIPOSO","ZEBRA",
 "RISO","ROTELLA"
               ];
 
-let countdownInterval; // Interval per il countdown
-let isRunning = false; // Stato del countdown
-let currentTime = 60; // Tempo iniziale del countdown
-let randomIndex = 0;  // si posiziona sulla prima parola
+// Elementi del DOM
 const wordElement = document.getElementById("word");
 const countdownElement = document.getElementById("countdown");
+const timerElement = document.getElementById("timer");
+const advanceButton = document.getElementById("advanceButton");
+
+let countdownInterval; // Interval per il countdown
+let timerInterval; // Interval per il timer
+let isCountingDown = false; // Stato del countdown
+let currentTime = 60; // Tempo iniziale del countdown
+let timerTime = 0; // Timer che parte da 0 ogni volta che cambia la parola
+let currentIndex = 0; // Indice per l'array delle parole
 
 // Funzione per iniziare o fermare il countdown
 function toggleCountdown() {
-    if (isRunning) {
+    if (isCountingDown) {
         // Se il countdown è in esecuzione, fermalo
         clearInterval(countdownInterval);
-        isRunning = false;
+        clearInterval(timerInterval);
+        isCountingDown = false;
     } else {
         // Se il countdown è fermo, avvialo
         countdownInterval = setInterval(function() {
             if (currentTime > 0) {
                 currentTime--;
                 countdownElement.textContent = currentTime;
-            } else {
-                clearInterval(countdownInterval);
-                isRunning = false;
-            }
-        }, 1000);
-        isRunning = true;
-    }
-}
-
-// Funzione per cambiare la parola
-function changeWord() {
-    //const randomIndex = Math.floor(Math.random() * words.length);
-    wordElement.textContent = words[randomIndex];
-    randomIndex = randomIndex+1;
-    if (randomIndex > words.length) {
-        randomIndex = 0;
-    }
+    timerTime = 0;
+    timerElement.textContent = timerTime;
+    toggleCountdown();
 }
 
 // Aggiungi un evento alla barra spaziatrice
 document.addEventListener("keydown", function(event) {
     if (event.code === "Space") {
-        // Cambia la parola ogni volta che la barra spaziatrice viene premuta
-        if (!isRunning) {
-            changeWord();
-        }
-
-        // Avvia o ferma il countdown
-        toggleCountdown();
-        
-        // Resetta il tempo se il countdown è stato fermato
-        //if (!isRunning) {
-        //    currentTime = 60;
-        //    countdownElement.textContent = currentTime;
-        //}
+        changeWord();
     }
 });
+
+// Funzione per avanzare di 10 parole nell'array
+function advanceWords() {
+    currentIndex = (currentIndex + 10) % words.length;  // Avanza di 10 parole, ma torna all'inizio se supera la lunghezza dell'array
+    changeWord();
+}
+
+// Evento del bottone per avanzare di 10 parole
+advanceButton.addEventListener("click", advanceWords);
+
+// Inizializza con la prima parola
+changeWord();
