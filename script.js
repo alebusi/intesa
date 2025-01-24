@@ -106,6 +106,7 @@ document.addEventListener("keydown", function(event) {
 // Funzione per avanzare di 10 parole nell'array
 function advanceWords() {
     currentIndex = (currentIndex + 10) % words.length;  // Avanza di 10 parole, ma torna all'inizio se supera la lunghezza dell'array
+    toggleCountdown(); // lo fermo
     changeWord();
 }
 
