@@ -47,7 +47,7 @@ const advanceButton = document.getElementById("advanceButton");
 let countdownInterval; // Interval per il countdown
 let timerInterval; // Interval per il timer
 let isCountingDown = false; // Stato del countdown
-let currentTime = 60; // Tempo iniziale del countdown
+let currentTime = 900; // Tempo iniziale del countdown
 let timerTime = 0; // Timer che parte da 0 ogni volta che cambia la parola
 let currentIndex = 0; // Indice per l'array delle parole
 
@@ -65,8 +65,9 @@ function toggleCountdown() {
                 currentTime--;
                 countdownElement.textContent = currentTime;
             } else {
-                clearInterval(countdownInterval);
-                isCountingDown = false;
+                currentTime=60;
+                //clearInterval(countdownInterval);
+                //isCountingDown = false;
             }
         }, 1000);
         
@@ -88,9 +89,7 @@ function changeWord() {
         if (currentIndex > words.length) {
             currentIndex = 0;
         }
-        if (currentTime === 0) {
-            currentTime = 60;
-        }    
+        // currentTime = 60;    
         countdownElement.textContent = currentTime;
         timerTime = 0;
         timerElement.textContent = timerTime;
