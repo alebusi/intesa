@@ -87,8 +87,10 @@ function changeWord() {
         currentIndex++;
         if (currentIndex > words.length) {
             currentIndex = 0;
-        } 
-        currentTime = 60;
+        }
+        if (currentTime === 0) {
+            currentTime = 60;
+        }    
         countdownElement.textContent = currentTime;
         timerTime = 0;
         timerElement.textContent = timerTime;
