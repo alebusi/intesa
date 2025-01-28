@@ -66,6 +66,7 @@ function toggleCountdown() {
                 countdownElement.textContent = currentTime;
             } else {
                 currentTime=60;
+                countdownElement.textContent = currentTime;
                 //clearInterval(countdownInterval);
                 //isCountingDown = false;
             }
