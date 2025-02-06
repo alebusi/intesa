@@ -23,7 +23,7 @@ body, html {
     margin-bottom: 20px;
 }
 
-#countdown-container, #timer-container {
+#countdown-container, #timer-container, #count-word {
     font-size: 20px;
     font-weight: normal;
 }

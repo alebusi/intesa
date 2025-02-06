@@ -43,6 +43,7 @@ const wordElement = document.getElementById("word");
 const countdownElement = document.getElementById("countdown");
 const timerElement = document.getElementById("timer");
 const advanceButton = document.getElementById("advanceButton");
+const countwordElement = document.getElementById("countword");
 
 let countdownInterval; // Interval per il countdown
 let timerInterval; // Interval per il timer
@@ -50,6 +51,7 @@ let isCountingDown = false; // Stato del countdown
 let currentTime = 60; // Tempo iniziale del countdown
 let timerTime = 0; // Timer che parte da 0 ogni volta che cambia la parola
 let currentIndex = 0; // Indice per l'array delle parole
+let countWord = 0;
 
 // Funzione per iniziare o fermare il countdown
 function toggleCountdown() {
@@ -103,7 +105,15 @@ document.addEventListener("keydown", function(event) {
     if (event.code === "Space") {
         changeWord();
     }
-});
+    else if (event.code === "ArrowUp") {
+        countWord++;
+        countwordElement.textContent = countWord;
+    }
+    else (event.code === "ArrowDown") {
+        countWord--;
+        countwordElement.textContent = countWord;
+    }
+};
 
 // Funzione per avanzare di 10 parole nell'array
 function advanceWords() {
