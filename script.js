@@ -113,7 +113,7 @@ document.addEventListener("keydown", function(event) {
         countWord--;
         countwordElement.textContent = countWord;
     }
-};
+});
 
 // Funzione per avanzare di 10 parole nell'array
 function advanceWords() {
