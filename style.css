@@ -23,14 +23,17 @@ body, html {
     margin-bottom: 20px;
 }
 
-#countdown-container, #timer-container, #countword-container {
+#countdown-container, #timer-container {
     font-size: 20px;
     font-weight: normal;
 }
 
 #countword-container{
     color: red;
+    font-size: 30px;
     margin-top: 20px;
+    font-weight: normal;
+}
 }
 
 button {
