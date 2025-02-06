@@ -30,6 +30,7 @@ body, html {
 
 #countword-container{
     color: red;
+    margin-top: 20px;
 }
 
 button {
