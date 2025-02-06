@@ -126,4 +126,4 @@ function advanceWords() {
 advanceButton.addEventListener("click", advanceWords);
 
 // Inizializza con la prima parola
-changeWord();
+// changeWord();
