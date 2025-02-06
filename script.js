@@ -1,6 +1,5 @@
 // Array di parole da selezionare
 const words = [
-"NUOVA SESSIONE",
 "LANCETTE","MARTE","JOLLY","CUCU'","MAGLIETTA",
 "CONTRO","DATA","RISVOLTINO","REPUBBLICA",
 "POSTER","OCCIDENTALE",
