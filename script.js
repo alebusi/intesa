@@ -109,8 +109,10 @@ document.addEventListener("keydown", function(event) {
         countwordElement.textContent = countWord;
     }
     else if (event.code === "ArrowDown") {
-        countWord--;
-        countwordElement.textContent = countWord;
+        if (countWord > 1) {
+            countWord--;
+            countwordElement.textContent = countWord;
+        }
     }
 });
 
