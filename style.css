@@ -23,9 +23,13 @@ body, html {
     margin-bottom: 20px;
 }
 
-#countdown-container, #timer-container, #count-word {
+#countdown-container, #timer-container, #countword-container {
     font-size: 20px;
     font-weight: normal;
+}
+
+#countword-container{
+    color: red;
 }
 
 button {
